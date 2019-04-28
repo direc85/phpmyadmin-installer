@@ -263,14 +263,11 @@ echo "
         IF usercount > 0 THEN
             DROP USER 'phpmyadmin'@'localhost';
         END IF;
-        CREATE USER 'phpmyadmin'@'localhost';
-        UPDATE user
-            SET password=PASSWORD('$PHPMYNEWPW')
-            WHERE User='phpmyadmin'
-            AND Host = 'localhost';
+        CREATE USER 'phpmyadmin'@'localhost'
+            IDENTIFIED BY '$PHPMYNEWPW';
         GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost';
         FLUSH PRIVILEGES;
-    END ;\$\$
+    END \$\$
     DELIMITER ;
     CALL mysql.pma_user_create() ;
     DROP PROCEDURE IF EXISTS mysql.pma_user_create;
