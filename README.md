@@ -4,6 +4,8 @@ Inspired by the fact that the Debian and Ubuntu packages still ship version 4.4.
 
 ### This is a blunt and experimental script.
 
+### It may not result in a secure setup.
+
 ### Use at your own risk.
 
 The script is tested on the following distributions:
